@@ -9,6 +9,6 @@ public class HelloWorldController {
 
     @GetMapping(path = "/")
     public ModelAndView showHelloWorld(){
-        return new ModelAndView("helloworld"); // Muss wie das HTML Template heißen in dem Fall helloworld
+        return new ModelAndView("helloworld"); // Muss wie das HTML Template heißen in dem Fall helloworl
     }
 }
