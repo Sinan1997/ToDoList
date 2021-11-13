@@ -1,4 +1,4 @@
-package htw.berlin.webtech.ToDoListM1.web;
+package htw.berlin.webtech.ToDoListM1.web.api;
 
 import htw.berlin.webtech.ToDoListM1.web.api.toDo;
 import org.springframework.http.ResponseEntity;
