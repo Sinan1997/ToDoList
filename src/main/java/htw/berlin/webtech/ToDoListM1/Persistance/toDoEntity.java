@@ -1,4 +1,4 @@
-package htw.berlin.webtech.ToDoListM1.toDoEntity;
+package htw.berlin.webtech.ToDoListM1.Persistance;
 
 import javax.persistence.*;
 
@@ -49,7 +49,7 @@ public class toDoEntity {
         this.datum = datum;
     }
 
-    public boolean isComplete() {
+    public boolean getComplete() {
         return complete;
     }
 

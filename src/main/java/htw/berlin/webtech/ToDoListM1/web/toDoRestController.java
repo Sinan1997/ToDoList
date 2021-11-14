@@ -1,28 +1,27 @@
 package htw.berlin.webtech.ToDoListM1.web;
 
+import htw.berlin.webtech.ToDoListM1.service.ToDoService;
 import htw.berlin.webtech.ToDoListM1.web.api.toDo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class toDoRestController {
 
-    private List<toDo> toDos;
+    private final ToDoService toDoService;
 
-    public toDoRestController() {
-        toDos = new ArrayList<>();
-        toDos.add(new toDo(1, "MAS Hausaufgaben", "30.11.2021", false ));
-        toDos.add(new toDo(1, "WebTech Hausaufgaben", "01.12.2021", true));
+   public toDoRestController(ToDoService toDoService){
+       this.toDoService = toDoService;
+
     }
 
     // api ist die öffentliche Schnittstelle unserer Anwendung
     @GetMapping(path = "/api/v1/toDos")
     public ResponseEntity<List<toDo>> fetchtoDos(){
-        return ResponseEntity.ok(toDos);
+        return ResponseEntity.ok(toDoService.findAll());
     }
 
 }
