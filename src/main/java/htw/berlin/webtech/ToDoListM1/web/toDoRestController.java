@@ -1,6 +1,5 @@
-package htw.berlin.webtech.ToDoListM1.web.api;
+package htw.berlin.webtech.ToDoListM1.web;
 
-import htw.berlin.webtech.ToDoListM1.web.api.toDo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +18,9 @@ public class toDoRestController {
         toDos.add(new toDo(1, "WebTech Hausaufgaben", "01.12.2021", true));
     }
 
+    // api ist die öffentliche Schnittstelle unserer Anwendung
     @GetMapping(path = "/api/v1/toDos")
-    public ResponseEntity<List<toDo>> fetchtoDo(){
+    public ResponseEntity<List<toDo>> fetchtoDos(){
         return ResponseEntity.ok(toDos);
     }
 
