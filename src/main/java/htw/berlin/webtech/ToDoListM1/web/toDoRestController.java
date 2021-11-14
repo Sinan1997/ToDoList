@@ -5,10 +5,7 @@ import htw.berlin.webtech.ToDoListM1.service.ToDoService;
 import htw.berlin.webtech.ToDoListM1.web.api.toDo;
 import htw.berlin.webtech.ToDoListM1.web.api.toDoCreateRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -31,6 +28,13 @@ public class toDoRestController {
     @GetMapping(path = "/api/v1/toDos")
     public ResponseEntity<List<toDo>> fetchtoDos(){
         return ResponseEntity.ok(toDoService.findAll());
+    }
+
+    @GetMapping(path = "/api/v1/toDos/{id}")
+    public ResponseEntity<toDo> fetchtoDoById(@PathVariable Long id){
+        var toDo = toDoService.findById(id);
+        return toDo != null? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
+
     }
 
     @PostMapping(path = "/api/v1/toDos")

@@ -24,6 +24,10 @@ public class ToDoService {
                 .collect(Collectors.toList());
 
     }
+    public toDo findById(Long id) {
+        var toDoEntity= toDoRepository.findById(id);
+        return toDoEntity.map(this::transformEntity).orElse(null);
+    }
 
     public toDo create(toDoCreateRequest request) {
         var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(), request.isComplete());
@@ -39,4 +43,6 @@ public class ToDoService {
                 toDoEntity.getComplete())
                 ;
     }
+
+
 }
