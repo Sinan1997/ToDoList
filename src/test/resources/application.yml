@@ -1,22 +1,9 @@
 spring:
   datasource:
-    username: omnvppzealyvwg
-    password: bd00a3e2fb21c52bdf125ef2a9f6e728f2fa701b7ebb12a7e8d295d7b698e72e
-    url: jdbc:postgresql://ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d12tl2o4aopv74?user=omnvppzealyvwg&password=bd00a3e2fb21c52bdf125ef2a9f6e728f2fa701b7ebb12a7e8d295d7b698e72e
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    properties:
-      hibernate:
-        # The SQL dialect makes Hibernate generate better SQL for the chosen database
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      jdbc:
-        time_zone: UTC
-    show-sql: false # Set true for debugging
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update # (create, create-drop, validate, update)
-    open-in-view: false
+    username: sa
+    password:
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
   sql:
     init:
-      platform: postgres
       mode: always
