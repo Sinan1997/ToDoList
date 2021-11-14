@@ -56,7 +56,6 @@ public class toDoRestController {
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 
-
 }
 
 
