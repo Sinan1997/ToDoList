@@ -43,7 +43,7 @@ public class toDo {
         return complete;
     }
 
-    public void setComplete(boolean elredigt) {
+    public void setComplete(boolean complete) {
         this.complete = complete;
     }
 }
