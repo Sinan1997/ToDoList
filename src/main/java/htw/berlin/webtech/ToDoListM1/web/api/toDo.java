@@ -1,4 +1,4 @@
-package htw.berlin.webtech.ToDoListM1.web;
+package htw.berlin.webtech.ToDoListM1.web.api;
 
 
 public class toDo {
@@ -6,13 +6,13 @@ public class toDo {
     private long id;
     private String nameToDo;
     private String datum;
-    private boolean erledigt;
+    private boolean complete;
 
-    public toDo(long id, String nameToDo, String datum, boolean erledigt) {
+    public toDo(long id, String nameToDo, String datum, boolean complete) {
         this.id = id;
         this.nameToDo = nameToDo;
         this.datum = datum;
-        this.erledigt = erledigt;
+        this.complete = complete;
     }
 
     public long getId() {
@@ -39,11 +39,11 @@ public class toDo {
         this.datum = datum;
     }
 
-    public boolean isErledigt() {
-        return erledigt;
+    public boolean isComplete() {
+        return complete;
     }
 
-    public void setErledigt(boolean elredigt) {
-        this.erledigt = erledigt;
+    public void setComplete(boolean elredigt) {
+        this.complete = complete;
     }
 }
