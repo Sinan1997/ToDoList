@@ -3,7 +3,7 @@ package htw.berlin.webtech.ToDoListM1.Persistance;
 import javax.persistence.*;
 
 @Entity(name = "toDo")
-public class toDoEntity {
+public class ToDoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,20 +16,20 @@ public class toDoEntity {
     @Column(name = "datum", nullable = false)
     private String datum;
 
-    @Column(name = "Erledigt")
+    @Column(name = "complete")
     private boolean complete;
 
-    public toDoEntity(long id, String nameToDo, String datum, boolean complete) {
+    public ToDoEntity(long id, String nameToDo, String datum, boolean complete) {
         this.id = id;
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.complete = complete;
     }
 
-    protected toDoEntity(){
+    protected ToDoEntity(){
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface toDoRepository  extends JpaRepository<toDoEntity, Long> {
+public interface ToDoRepository extends JpaRepository<ToDoEntity, Long> {
 
-    List<toDoEntity> findAllByNameToDo(String nameToDo);
+    List<ToDoEntity> findAllByNameToDo(String nameToDo);
 
 }
