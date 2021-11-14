@@ -19,8 +19,8 @@ public class ToDoEntity {
     @Column(name = "complete")
     private boolean complete;
 
-    public ToDoEntity(long id, String nameToDo, String datum, boolean complete) {
-        this.id = id;
+    public ToDoEntity(String nameToDo, String datum, boolean complete) {
+
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.complete = complete;

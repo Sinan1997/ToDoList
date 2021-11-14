@@ -1,25 +1,15 @@
 package htw.berlin.webtech.ToDoListM1.web.api;
 
+public class toDoCreateRequest {
 
-public class toDo {
-
-    private long id;
     private String nameToDo;
     private String datum;
     private boolean complete;
 
-    public toDo(Long id, String nameToDo, String datum, boolean complete) {
+    public toDoCreateRequest(String nameToDo, String datum, boolean complete) {
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.complete = complete;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNameToDo() {
