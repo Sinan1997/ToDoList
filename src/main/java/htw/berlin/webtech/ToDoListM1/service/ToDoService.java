@@ -50,6 +50,14 @@ public class ToDoService {
         return transformEntity(toDoEntity);
     }
 
+    public boolean deleteById(Long id) {
+        if (!toDoRepository.existsById(id)) {
+            return false;
+        }
+
+        toDoRepository.deleteById(id);
+        return true;
+    }
     private toDo transformEntity(ToDoEntity toDoEntity) {
         return new toDo(
                 toDoEntity.getId(),
