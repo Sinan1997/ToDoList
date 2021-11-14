@@ -1,12 +1,12 @@
 package htw.berlin.webtech.ToDoListM1.web.api;
 
-public class toDoCreateRequest {
+public class toDoCreateUpdateRequest {
 
     private String nameToDo;
     private String datum;
     private boolean complete;
 
-    public toDoCreateRequest(String nameToDo, String datum, boolean complete) {
+    public toDoCreateUpdateRequest(String nameToDo, String datum, boolean complete) {
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.complete = complete;
