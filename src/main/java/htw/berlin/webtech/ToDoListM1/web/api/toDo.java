@@ -8,10 +8,12 @@ public class toDo {
     private String datum;
     private boolean complete;
 
-    public toDo(Long id, String nameToDo, String datum, boolean complete) {
+    public toDo(long id, String nameToDo, String datum, boolean complete) {
+        this.id = id;
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.complete = complete;
+
     }
 
     public long getId() {

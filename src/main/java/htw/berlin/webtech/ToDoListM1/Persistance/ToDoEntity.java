@@ -2,13 +2,13 @@ package htw.berlin.webtech.ToDoListM1.Persistance;
 
 import javax.persistence.*;
 
-@Entity(name = "toDo")
+@Entity(name = "toDos")
 public class ToDoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "name_toDo", nullable = false)
     private String nameToDo;
