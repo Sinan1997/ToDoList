@@ -12,6 +12,10 @@ public class toDoCreateUpdateRequest {
         this.complete = complete;
     }
 
+    public toDoCreateUpdateRequest(){
+
+    }
+
     public String getNameToDo() {
         return nameToDo;
     }
