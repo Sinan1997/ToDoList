@@ -3,6 +3,21 @@ package htw.berlin.webtech.ToDoListM1.web.api;
 
 public class toDoManipulationRequest {
 
+    private String nameToDo;
+    private String datum;
+    private String typeTask;
+    private boolean list;
+
+    public toDoManipulationRequest(String nameToDo, String datum, String typeTask, boolean list){
+        this.nameToDo = nameToDo;
+        this.datum = datum;
+        this.typeTask = typeTask;
+        this.list = list;
+    }
+
+    public toDoManipulationRequest() {
+
+    }
     public String getNameToDo() {
         return nameToDo;
     }
@@ -35,13 +50,8 @@ public class toDoManipulationRequest {
         this.list = list;
     }
 
-    private String nameToDo;
-    private String datum;
-    private String typeTask;
-    private boolean list;
 
 
-    public toDoManipulationRequest() {
 
-    }
+
 }

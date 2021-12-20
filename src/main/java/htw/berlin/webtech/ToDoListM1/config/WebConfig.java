@@ -14,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedMethods("*")
                 .allowedOrigins(
-                        "http://localhost:3565",
+                        "http://localhost:8000",
                         "http://webtech-todolist--frontend.herokuapp.com"
                 );
     }
