@@ -2,8 +2,9 @@ package htw.berlin.webtech.ToDoListM1.web;
 
 import htw.berlin.webtech.ToDoListM1.service.ToDoService;
 import htw.berlin.webtech.ToDoListM1.web.api.toDo;
-import htw.berlin.webtech.ToDoListM1.web.api.toDoCreateUpdateRequest;
+import htw.berlin.webtech.ToDoListM1.web.api.toDoManipulationRequest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -11,6 +12,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
+@Validated
 public class toDoRestController {
 
 
@@ -36,15 +38,17 @@ public class toDoRestController {
     }
 
     @PostMapping(path = "/api/v1/toDos")
-    public ResponseEntity<Void> createToDo(@RequestBody toDoCreateUpdateRequest request) throws URISyntaxException {
+    public ResponseEntity<Void> createToDo(@RequestBody toDoManipulationRequest request) throws URISyntaxException {
         var toDo = toDoService.create(request);
         URI uri = new URI("/api/v1/toDos/" + toDo.getId());
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.created(uri)
+                .header("Access-Control-Expose-headers", "Location")
+                .build();
 
     }
 
     @PutMapping(path = "/api/v1/toDos/{id}")
-    public ResponseEntity<toDo> updateToDo(@PathVariable Long id, @RequestBody toDoCreateUpdateRequest request) {
+    public ResponseEntity<toDo> updateToDo(@PathVariable Long id, @RequestBody toDoManipulationRequest request) {
            var toDo = toDoService.update(id, request);
            return toDo != null ? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
 
