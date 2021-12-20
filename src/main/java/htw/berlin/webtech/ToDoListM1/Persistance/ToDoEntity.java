@@ -16,6 +16,9 @@ public class ToDoEntity {
     @Column(name = "datum", nullable = false)
     private String datum;
 
+    @Column(name = "list", nullable = false)
+    private boolean list;
+
     @Column(name = "complete")
     private boolean complete;
 
@@ -26,7 +29,7 @@ public class ToDoEntity {
         this.complete = complete;
     }
 
-    protected ToDoEntity(){
+    protected ToDoEntity() {
     }
 
     public Long getId() {
@@ -56,5 +59,12 @@ public class ToDoEntity {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
-}
 
+    public boolean getList() {
+        return list;
+    }
+
+    public void setList(boolean list){
+        this.list = list;
+    }
+}
