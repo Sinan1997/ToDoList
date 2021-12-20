@@ -16,6 +16,9 @@ public class ToDoEntity {
     @Column(name = "datum", nullable = false)
     private String datum;
 
+    @Column(name = "type", nullable = false)
+    private String type;
+
     @Column(name = "list", nullable = false)
     private boolean list;
 
@@ -60,7 +63,13 @@ public class ToDoEntity {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type){
+        this.type = type;
+    }
     public boolean getList() {
         return list;
     }
@@ -68,4 +77,6 @@ public class ToDoEntity {
     public void setList(boolean list){
         this.list = list;
     }
+
+
 }

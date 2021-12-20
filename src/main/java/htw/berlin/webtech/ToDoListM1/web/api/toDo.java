@@ -6,14 +6,16 @@ public class toDo {
     private long id;
     private String nameToDo;
     private String datum;
+    private String type;
     private boolean list;
 
     private boolean complete;
 
-    public toDo(long id, String nameToDo, String datum, boolean list, boolean complete) {
+    public toDo(long id, String nameToDo, String datum, String type, boolean list, boolean complete) {
         this.id = id;
         this.nameToDo = nameToDo;
         this.datum = datum;
+        this.type = type;
         this.list = list;
         this.complete = complete;
 

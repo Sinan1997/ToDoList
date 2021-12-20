@@ -63,8 +63,10 @@ public class ToDoService {
                 toDoEntity.getId(),
                 toDoEntity.getNameToDo(),
                 toDoEntity.getDatum(),
+                toDoEntity.getType(),
                 toDoEntity.getList(),
                 toDoEntity.getComplete())
+
                 ;
     }
 
