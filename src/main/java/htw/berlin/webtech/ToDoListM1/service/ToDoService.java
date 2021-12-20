@@ -31,7 +31,7 @@ public class ToDoService {
     }
 
     public toDo create(toDoCreateUpdateRequest request) {
-        var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(), request.isComplete());
+        var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(), request.isList(), request.isComplete());
         toDoEntity = toDoRepository.save(toDoEntity);
         return transformEntity(toDoEntity);
     }

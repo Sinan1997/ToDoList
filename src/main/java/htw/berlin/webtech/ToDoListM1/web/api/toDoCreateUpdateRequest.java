@@ -4,11 +4,13 @@ public class toDoCreateUpdateRequest {
 
     private String nameToDo;
     private String datum;
+    private boolean list;
     private boolean complete;
 
-    public toDoCreateUpdateRequest(String nameToDo, String datum, boolean complete) {
+    public toDoCreateUpdateRequest(String nameToDo, String datum, boolean list, boolean complete) {
         this.nameToDo = nameToDo;
         this.datum = datum;
+        this.list = list;
         this.complete = complete;
     }
 
@@ -38,5 +40,13 @@ public class toDoCreateUpdateRequest {
 
     public void setComplete(boolean complete) {
         this.complete = complete;
+    }
+
+    public boolean isList(){
+        return list;
+    }
+
+    public void setList(boolean list){
+        this.list = list;
     }
 }
