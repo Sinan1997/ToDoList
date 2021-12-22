@@ -25,6 +25,7 @@ public class toDo {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
+
     public long getId() {
         return id;
     }
