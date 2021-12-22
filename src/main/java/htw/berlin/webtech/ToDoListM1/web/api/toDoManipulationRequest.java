@@ -6,13 +6,13 @@ public class toDoManipulationRequest {
     private String nameToDo;
     private String datum;
     private String typeTask;
-    private boolean list;
+    private boolean complete;
 
-    public toDoManipulationRequest(String nameToDo, String datum, String typeTask, boolean list){
+    public toDoManipulationRequest(String nameToDo, String datum, String typeTask, boolean complete){
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.typeTask = typeTask;
-        this.list = list;
+        this.complete = complete;
     }
 
     public toDoManipulationRequest() {
@@ -42,12 +42,12 @@ public class toDoManipulationRequest {
         this.typeTask = typeTask;
     }
 
-    public boolean isList() {
-        return list;
+    public boolean isComplete() {
+        return complete;
     }
 
-    public void setList(boolean list) {
-        this.list = list;
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 
 

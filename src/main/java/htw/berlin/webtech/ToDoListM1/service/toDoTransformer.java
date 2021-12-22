@@ -16,7 +16,7 @@ public class toDoTransformer {
                 toDoEntity.getNameToDo(),
                 toDoEntity.getDatum(),
                 typeTask,
-                toDoEntity.getList());
+                toDoEntity.getComplete());
 
 
     }
