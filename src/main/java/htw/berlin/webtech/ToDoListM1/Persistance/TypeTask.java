@@ -5,5 +5,6 @@ public enum TypeTask {
     DAILYTASK,
     WORK,
     SPORT,
+    DIVERSE,
     UNKNOWN
 }

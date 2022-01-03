@@ -26,12 +26,12 @@ public class toDoRestController {
 
     // api ist die öffentliche Schnittstelle unserer Anwendung
     @GetMapping(path = "/api/v1/toDos")
-    public ResponseEntity<List<toDo>> fetchtoDos() {
+    public ResponseEntity<List<toDo>> fetchToDos() {
         return ResponseEntity.ok(toDoService.findAll());
     }
 
     @GetMapping(path = "/api/v1/toDos/{id}")
-    public ResponseEntity<toDo> fetchtoDoById(@PathVariable Long id) {
+    public ResponseEntity<toDo> fetchToDoById(@PathVariable Long id) {
         var toDo = toDoService.findById(id);
         return toDo != null ? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
 
@@ -41,28 +41,37 @@ public class toDoRestController {
     public ResponseEntity<Void> createToDo(@RequestBody toDoManipulationRequest request) throws URISyntaxException {
         var toDo = toDoService.create(request);
         URI uri = new URI("/api/v1/toDos/" + toDo.getId());
-        return ResponseEntity.created(uri)
-                .header("Access-Control-Expose-headers", "Location")
+        return ResponseEntity
+                .created(uri)
+                .header("Access-Control-Expose-Headers", "Location")
                 .build();
-
     }
+
 
     @PutMapping(path = "/api/v1/toDos/{id}")
     public ResponseEntity<toDo> updateToDo(@PathVariable Long id, @RequestBody toDoManipulationRequest request) {
-           var toDo = toDoService.update(id, request);
-           return toDo != null ? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
+        var toDo = toDoService.update(id, request);
+        return toDo != null ? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
 
     }
 
     @DeleteMapping(path = "api/v1/toDos/{id}")
-    public ResponseEntity<Void> deleteToDo(@PathVariable Long id){
+    public ResponseEntity<Void> deleteToDo(@PathVariable Long id) {
         boolean successful = toDoService.deleteById(id);
-        return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+        return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+    private boolean validate(toDoManipulationRequest request) {
+        return request.getNameToDo() != null
+                && !request.getNameToDo().isBlank()
+                && request.getDatum() != null
+                && !request.getDatum().isBlank()
+                && request.getTypeTask() != null
+                && !request.getTypeTask().isBlank();
+
     }
 
 }
-
-
 
 
 

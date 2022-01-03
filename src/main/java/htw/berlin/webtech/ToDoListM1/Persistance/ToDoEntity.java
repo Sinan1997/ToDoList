@@ -23,9 +23,6 @@ public class ToDoEntity {
     private TypeTask typeTask;
 
 
-
-
-
     public ToDoEntity(String nameToDo, String datum,TypeTask typetask) {
 
         this.nameToDo = nameToDo;
