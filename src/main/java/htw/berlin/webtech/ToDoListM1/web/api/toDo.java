@@ -7,23 +7,14 @@ public class toDo {
     private String nameToDo;
     private String datum;
     private String typeTask;
-    private boolean complete;
 
 
-    public toDo(long id, String nameToDo, String datum, String typeTask, boolean complete) {
+    public toDo(long id, String nameToDo, String datum, String typeTask) {
         this.id = id;
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.typeTask = typeTask;
-        this.complete = complete;
 
-    }
-    public boolean isComplete() {
-        return complete;
-    }
-
-    public void setComplete(boolean complete) {
-        this.complete = complete;
     }
 
     public long getId() {
