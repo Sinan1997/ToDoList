@@ -36,7 +36,7 @@ public class ToDoService {
 
     public toDo create(toDoManipulationRequest request) {
         var typeTask =TypeTask.valueOf(request.getTypeTask());
-        var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(), request.isComplete(),typeTask);
+        var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(),typeTask);
         toDoEntity = toDoRepository.save(toDoEntity);
         return toDoTransformer.transformEntity(toDoEntity);
     }
@@ -50,7 +50,6 @@ public class ToDoService {
         var toDoEntity = toDoEntityOptional.get();
         toDoEntity.setNameToDo(request.getNameToDo());
         toDoEntity.setDatum(request.getDatum());
-        toDoEntity.setComplete(request.isComplete());
         toDoEntity.setTypeTask(TypeTask.valueOf(request.getTypeTask()));
         toDoEntity = toDoRepository.save(toDoEntity);
         return toDoTransformer.transformEntity(toDoEntity);

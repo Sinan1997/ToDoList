@@ -22,17 +22,14 @@ public class ToDoEntity {
     @Enumerated(value = EnumType.STRING)
     private TypeTask typeTask;
 
-    @Column(name = "complete", nullable = false)
-    private boolean complete;
 
 
 
 
-    public ToDoEntity(String nameToDo, String datum, boolean complete, TypeTask typetask) {
+    public ToDoEntity(String nameToDo, String datum,TypeTask typetask) {
 
         this.nameToDo = nameToDo;
         this.datum = datum;
-        this.complete = complete;
         this.typeTask = typetask;
     }
 
@@ -66,18 +63,6 @@ public class ToDoEntity {
 
     public void setTypeTask(TypeTask typeTask) {
         this.typeTask = typeTask;
-    }
-
-    public boolean isComplete() {
-        return complete;
-    }
-
-    public boolean getComplete() {
-        return complete;
-    }
-
-    public void setComplete(boolean complete){
-        this.complete = complete;
     }
 
 }
