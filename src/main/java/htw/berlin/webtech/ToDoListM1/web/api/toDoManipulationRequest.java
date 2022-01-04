@@ -8,11 +8,6 @@ public class toDoManipulationRequest {
     private String datum;
     private String typeTask;
 
-    public toDoManipulationRequest(String nameToDo, String datum, String typeTask){
-        this.nameToDo = nameToDo;
-        this.datum = datum;
-        this.typeTask = typeTask;
-    }
 
     public toDoManipulationRequest() {
 

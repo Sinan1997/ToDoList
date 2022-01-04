@@ -1,7 +1,7 @@
 package htw.berlin.webtech.ToDoListM1.web;
 
 import htw.berlin.webtech.ToDoListM1.service.ToDoService;
-import htw.berlin.webtech.ToDoListM1.web.api.toDo;
+import htw.berlin.webtech.ToDoListM1.web.api.ToDo;
 import htw.berlin.webtech.ToDoListM1.web.api.toDoManipulationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -13,32 +13,31 @@ import java.util.List;
 
 @RestController
 @Validated
-public class toDoRestController {
+public class ToDoRestController {
 
 
     private final ToDoService toDoService;
 
-    public toDoRestController(ToDoService toDoService) {
+    public ToDoRestController(ToDoService toDoService) {
         this.toDoService = toDoService;
-
 
     }
 
     // api ist die öffentliche Schnittstelle unserer Anwendung
     @GetMapping(path = "/api/v1/toDos")
-    public ResponseEntity<List<toDo>> fetchToDos() {
+    public ResponseEntity<List<ToDo>> fetchToDos() {
         return ResponseEntity.ok(toDoService.findAll());
     }
 
     @GetMapping(path = "/api/v1/toDos/{id}")
-    public ResponseEntity<toDo> fetchToDoById(@PathVariable Long id) {
+    public ResponseEntity<ToDo> fetchToDoById(@PathVariable Long id) {
         var toDo = toDoService.findById(id);
         return toDo != null ? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
 
     }
 
     @PostMapping(path = "/api/v1/toDos")
-    public ResponseEntity<Void> createToDo(@RequestBody toDoManipulationRequest request) throws URISyntaxException {
+    public ResponseEntity<Void> createToDo(@Validated @RequestBody toDoManipulationRequest request) throws URISyntaxException {
         var toDo = toDoService.create(request);
         URI uri = new URI("/api/v1/toDos/" + toDo.getId());
         return ResponseEntity
@@ -49,7 +48,7 @@ public class toDoRestController {
 
 
     @PutMapping(path = "/api/v1/toDos/{id}")
-    public ResponseEntity<toDo> updateToDo(@PathVariable Long id, @RequestBody toDoManipulationRequest request) {
+    public ResponseEntity<ToDo> updateToDo(@PathVariable Long id, @RequestBody toDoManipulationRequest request) {
         var toDo = toDoService.update(id, request);
         return toDo != null ? ResponseEntity.ok(toDo) : ResponseEntity.notFound().build();
 
@@ -59,16 +58,6 @@ public class toDoRestController {
     public ResponseEntity<Void> deleteToDo(@PathVariable Long id) {
         boolean successful = toDoService.deleteById(id);
         return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
-    }
-
-    private boolean validate(toDoManipulationRequest request) {
-        return request.getNameToDo() != null
-                && !request.getNameToDo().isBlank()
-                && request.getDatum() != null
-                && !request.getDatum().isBlank()
-                && request.getTypeTask() != null
-                && !request.getTypeTask().isBlank();
-
     }
 
 }

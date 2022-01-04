@@ -3,9 +3,8 @@ package htw.berlin.webtech.ToDoListM1.service;
 import htw.berlin.webtech.ToDoListM1.Persistance.ToDoEntity;
 import htw.berlin.webtech.ToDoListM1.Persistance.ToDoRepository;
 import htw.berlin.webtech.ToDoListM1.Persistance.TypeTask;
-import htw.berlin.webtech.ToDoListM1.web.api.toDo;
+import htw.berlin.webtech.ToDoListM1.web.api.ToDo;
 import htw.berlin.webtech.ToDoListM1.web.api.toDoManipulationRequest;
-import org.aspectj.apache.bcel.generic.Type;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,14 +13,14 @@ import java.util.stream.Collectors;
 public class ToDoService {
 
     private final ToDoRepository toDoRepository;
-    private final toDoTransformer toDoTransformer;
+    private final ToDoTransformer toDoTransformer;
 
-    public ToDoService(ToDoRepository toDoRepository, toDoTransformer toDoTransformer) {
+    public ToDoService(ToDoRepository toDoRepository, ToDoTransformer toDoTransformer) {
         this.toDoRepository = toDoRepository;
         this.toDoTransformer = toDoTransformer;
     }
 
-    public List<toDo> findAll() {
+    public List<ToDo> findAll() {
         List<ToDoEntity> toDos = toDoRepository.findAll();
         return toDos.stream()
                 .map(toDoTransformer::transformEntity)
@@ -29,19 +28,19 @@ public class ToDoService {
 
     }
 
-    public toDo findById(Long id) {
+    public ToDo findById(Long id) {
         var toDoEntity = toDoRepository.findById(id);
         return toDoEntity.map(toDoTransformer::transformEntity).orElse(null);
     }
 
-    public toDo create(toDoManipulationRequest request) {
+    public ToDo create(toDoManipulationRequest request) {
         var typeTask =TypeTask.valueOf(request.getTypeTask());
-        var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(),typeTask);
+        var toDoEntity = new ToDoEntity(request.getNameToDo(), request.getDatum(), typeTask);
         toDoEntity = toDoRepository.save(toDoEntity);
         return toDoTransformer.transformEntity(toDoEntity);
     }
 
-    public toDo update(Long id, toDoManipulationRequest request) {
+    public ToDo update(Long id, toDoManipulationRequest request) {
         var toDoEntityOptional = toDoRepository.findById(id);
         if (toDoEntityOptional.isEmpty()) {
             return null;
@@ -52,6 +51,7 @@ public class ToDoService {
         toDoEntity.setDatum(request.getDatum());
         toDoEntity.setTypeTask(TypeTask.valueOf(request.getTypeTask()));
         toDoEntity = toDoRepository.save(toDoEntity);
+
         return toDoTransformer.transformEntity(toDoEntity);
     }
 

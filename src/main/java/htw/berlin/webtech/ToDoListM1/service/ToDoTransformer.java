@@ -2,16 +2,15 @@ package htw.berlin.webtech.ToDoListM1.service;
 
 import htw.berlin.webtech.ToDoListM1.Persistance.ToDoEntity;
 import htw.berlin.webtech.ToDoListM1.Persistance.TypeTask;
-import htw.berlin.webtech.ToDoListM1.web.api.toDo;
-import org.aspectj.apache.bcel.generic.Type;
+import htw.berlin.webtech.ToDoListM1.web.api.ToDo;
 import org.springframework.stereotype.Service;
 
 @Service
-public class toDoTransformer {
+public class ToDoTransformer {
 
-    public toDo transformEntity(ToDoEntity toDoEntity) {
+    public ToDo transformEntity(ToDoEntity toDoEntity) {
         var typeTask = toDoEntity.getTypeTask() != null ? toDoEntity.getTypeTask().name() : TypeTask.UNKNOWN.name();
-        return new toDo(
+        return new ToDo(
                 toDoEntity.getId(),
                 toDoEntity.getNameToDo(),
                 toDoEntity.getDatum(),

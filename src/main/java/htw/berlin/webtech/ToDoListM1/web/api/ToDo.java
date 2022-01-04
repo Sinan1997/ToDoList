@@ -1,7 +1,7 @@
 package htw.berlin.webtech.ToDoListM1.web.api;
 
 
-public class toDo {
+public class ToDo {
 
     private long id;
     private String nameToDo;
@@ -9,12 +9,16 @@ public class toDo {
     private String typeTask;
 
 
-    public toDo(long id, String nameToDo, String datum, String typeTask) {
+    public ToDo(long id, String nameToDo, String datum, String typeTask) {
         this.id = id;
         this.nameToDo = nameToDo;
         this.datum = datum;
         this.typeTask = typeTask;
 
+    }
+
+    public void setTypeTask(String typeTask) {
+        this.typeTask = typeTask;
     }
 
     public long getId() {
@@ -43,10 +47,6 @@ public class toDo {
 
     public String getTypeTask(){
         return typeTask;
-    }
-
-    public void setTypeTask(){
-        this.typeTask = typeTask;
     }
 
 }
