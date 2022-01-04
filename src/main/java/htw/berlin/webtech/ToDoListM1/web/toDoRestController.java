@@ -13,12 +13,12 @@ import java.util.List;
 
 @RestController
 @Validated
-public class ToDoRestController {
+public class toDoRestController {
 
 
     private final ToDoService toDoService;
 
-    public ToDoRestController(ToDoService toDoService) {
+    public toDoRestController(ToDoService toDoService) {
         this.toDoService = toDoService;
 
     }

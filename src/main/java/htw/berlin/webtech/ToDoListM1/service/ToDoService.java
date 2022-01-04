@@ -6,7 +6,7 @@ import htw.berlin.webtech.ToDoListM1.Persistance.TypeTask;
 import htw.berlin.webtech.ToDoListM1.web.api.ToDo;
 import htw.berlin.webtech.ToDoListM1.web.api.toDoManipulationRequest;
 import org.springframework.stereotype.Service;
-
+import htw.berlin.webtech.ToDoListM1.web.api.ToDo;
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
