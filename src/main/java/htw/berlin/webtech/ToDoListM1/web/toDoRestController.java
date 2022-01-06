@@ -15,7 +15,6 @@ import java.util.List;
 @Validated
 public class toDoRestController {
 
-
     private final ToDoService toDoService;
 
     public toDoRestController(ToDoService toDoService) {
@@ -54,57 +53,10 @@ public class toDoRestController {
 
     }
 
-    @DeleteMapping(path = "api/v1/toDos/{id}")
+    @DeleteMapping(path =  "api/v1/toDos/nameToDo/{id}")
     public ResponseEntity<Void> deleteToDo(@PathVariable Long id) {
         boolean successful = toDoService.deleteById(id);
         return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-public class toDoController {
-
-    @Autowired
-    toDoService service;
-
-    @PostMapping("/todo")
-    public toDo createtoDo(@RequestBody toDo todo){
-        return service.save(todo);
-    }
-
-    @GetMapping("/things/{id}")
-    public toDo gettoDo(@PathVariable String id) {
-        Long toDoId = Long.parseLong(id);
-        return service.get(toDoId);
-    }
-
-}
-*/
-

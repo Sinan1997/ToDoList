@@ -9,5 +9,4 @@ import java.util.List;
 public interface ToDoRepository extends JpaRepository<ToDoEntity, Long> {
 
     List<ToDoEntity> findAllByNameToDo(String nameToDo);
-
 }
