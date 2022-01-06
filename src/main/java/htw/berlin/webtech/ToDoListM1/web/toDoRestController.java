@@ -53,7 +53,7 @@ public class toDoRestController {
 
     }
 
-    @DeleteMapping(path =  "api/v1/toDos/nameToDo/{id}")
+    @DeleteMapping(path =  "api/v1/toDos/{id}")
     public ResponseEntity<Void> deleteToDo(@PathVariable Long id) {
         boolean successful = toDoService.deleteById(id);
         return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
