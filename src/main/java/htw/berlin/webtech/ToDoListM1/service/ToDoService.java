@@ -57,10 +57,10 @@ public class ToDoService {
 
     public boolean deleteById(Long id) {
         if (!toDoRepository.existsById(id)) {
-         return true;
+         return false;
         }
 
         toDoRepository.deleteById(id);
-        return false;
+        return true;
     }
 }

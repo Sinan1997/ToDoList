@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -36,7 +37,7 @@ public class toDoRestController {
     }
 
     @PostMapping(path = "/api/v1/toDos")
-    public ResponseEntity<Void> createToDo(@Validated @RequestBody toDoManipulationRequest request) throws URISyntaxException {
+    public ResponseEntity<Void> createToDo(@Valid @RequestBody toDoManipulationRequest request) throws URISyntaxException {
         var toDo = toDoService.create(request);
         URI uri = new URI("/api/v1/toDos/" + toDo.getId());
         return ResponseEntity
@@ -53,7 +54,7 @@ public class toDoRestController {
 
     }
 
-    @DeleteMapping(path =  "api/v1/toDos/{id}")
+    @DeleteMapping(path =  "/api/v1/toDos/{id}")
     public ResponseEntity<Void> deleteToDo(@PathVariable Long id) {
         boolean successful = toDoService.deleteById(id);
         return successful ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
