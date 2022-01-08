@@ -14,8 +14,8 @@ immer vor Augen hat bis wann er noch Zeit hätte.
 Willkommen auf unserer To-Do-List-Website. Sobald du die Seite aufrufst hast du die Möglichkeit das Menü oben Rechts aufzurufen. Hier kannst du zwischen drei Optionen
 wählen: Home, To-Dos, Timer und die About Seite. Um eine To-Do zu erstellen musst du auf den Reiter "To-Dos" klicken. Dort erhälst du zunächst einer Übersicht
 von allen To-Dos die erstellt wurden bzw. noch nicht gelöscht wurden. Unten rechts siehst du dann einen grünen Knopf womit du eine To-Do erstellen kannst. Das Fenster,
-welches danach geöffnet wird sollte selbst erklärend sein. (Denke daran deine To-Do einen erkennbaren Namen zu geben damit du sie schnell wieder findest)
-Die To-Do kannst du dann jederzeit wieder löschen. Sobald du nämlich auf den "Delete" Button klickst, wird die To-Do bein aktualisieren der Website nicht mehr angezeigt.
+welches danach geöffnet wird sollte selbst erklärend sein. (Denke daran deine To-Do einen erkennbaren Namen zu geben damit du sie schnell wieder findest (z.B. mit deinen Namen hier der To-Do))
+Die To-Do kannst du dann jederzeit wieder löschen. Sobald du nämlich auf den "Delete" Button klickst, wird die To-Do beim aktualisieren der Website nicht mehr angezeigt.
 Über den Promodoro-Timer hast du die Möglichekit dir einen 25 Minütigen Counter zu erstellen. Solltest du also eine To-Do erstellen die du in 25 Minuten
 erledigen möchtest, geh auf den Reiter oben Rechts und rufe den Timer auf. 
 
