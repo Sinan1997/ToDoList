@@ -7,7 +7,7 @@ Wir hatten die Idee, eine einfache To-Do-List Website zu erstellen. Das heißt, 
 und eine Deadline für die jeweilige To-Do zu setzen.
 
 Dazu haben wir eine weitere Option eingebaut, die es ermöglicht einen Timer für eine To-Do zu setzen. Sollte jemand also eine To-Do erstellen, die er innerhalb
-von 25 Min erledigen möchte, kann er einen Timer setzen. Zudem wird bei einer To-Do auch immer die Deadline bzw. das jeweilige Datum mit angezeigt sodass der Benutzer
+von 25 Minuten erledigen möchte oder lernen möchtest, kann er einen Timer setzen. Zudem wird bei einer To-Do auch immer die Deadline bzw. das jeweilige Datum mit angezeigt sodass der Benutzer
 immer vor Augen hat bis wann er noch Zeit hätte.
 
 # Erklärung der Website:
